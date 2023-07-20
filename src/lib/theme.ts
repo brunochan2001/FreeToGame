@@ -1,8 +1,7 @@
 import {
   createTheme,
   responsiveFontSizes,
-  ThemeOptions,
-  ThemeProvider
+  ThemeOptions
 } from '@mui/material/styles';
 
 const options: ThemeOptions = {

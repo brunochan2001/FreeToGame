@@ -1,7 +1,12 @@
 import React from 'react';
+import { DefaultLayout } from '../layout';
 
 const GameSinglePage = () => {
-  return <div>GameSinglePage</div>;
+  return (
+    <DefaultLayout>
+      <div>GameSinglePage</div>
+    </DefaultLayout>
+  );
 };
 
 export default GameSinglePage;
