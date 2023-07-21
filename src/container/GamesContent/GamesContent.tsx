@@ -4,6 +4,7 @@ import { RootState } from '../../store/storeConfig';
 import { GamesList } from '../GamesList';
 import { FiltersGame } from '../FiltersGames';
 import { Game } from '../../lib/types';
+import { Box, CircularProgress } from '@mui/material';
 
 const GamesContent: React.FC = () => {
   const { loading, data } = useSelector((state: RootState) => state);
@@ -16,7 +17,13 @@ const GamesContent: React.FC = () => {
   return (
     <>
       <FiltersGame setGames={setGames} />
-      {loading ? <div>isLoading</div> : <GamesList games={games} />}
+
+      {loading && (
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <CircularProgress />
+        </Box>
+      )}
+      {!loading && <GamesList games={games} />}
     </>
   );
 };

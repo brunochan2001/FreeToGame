@@ -12,15 +12,16 @@ import './style.css';
 
 interface Props {
   game: Game;
+  onClick: (id: number) => void;
 }
 
-const GameCard: React.FC<Props> = ({ game }) => {
+const GameCard: React.FC<Props> = ({ game, onClick }) => {
   return (
     <Card sx={{ maxWidth: 345 }} className="card__container">
       <CardMedia
         sx={{ height: 140 }}
         image={game.thumbnail}
-        title="green iguana"
+        title={game.title}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" className="title">
@@ -35,7 +36,11 @@ const GameCard: React.FC<Props> = ({ game }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" variant="outlined">
+        <Button
+          size="small"
+          variant="outlined"
+          onClick={() => onClick(game.id)}
+        >
           See more
         </Button>
       </CardActions>
