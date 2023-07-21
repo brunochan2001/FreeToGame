@@ -6,14 +6,17 @@ import * as types from '../actionTypes';
 import * as endpoints from '../endpoints';
 
 export const getGames =
-  (): ThunkAction<void, RootState, unknown, AnyAction> => async dispatch => {
+  (values = {}): ThunkAction<void, RootState, unknown, AnyAction> =>
+  async dispatch => {
     try {
       dispatch({ type: types.GET_GAMES_LOADING });
-      const res = await axios(endpoints.endpointGame);
+      const params = new URLSearchParams(values).toString();
+      const res = await axios(endpoints.endpointGame + '?' + params);
+      const { status } = res.data;
 
       dispatch({
         type: types.GET_GAMES_SUCCESS,
-        payload: res.data
+        payload: status == 0 ? [] : res.data
       });
     } catch (error) {
       dispatch({

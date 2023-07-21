@@ -1,14 +1,12 @@
 import React from 'react';
-import { Container } from '@mui/material';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
+import { Container, Box, Toolbar } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import Logo from '../../static/image/logo.png';
 import { CustomAppBar } from './style';
+import Logo from '../../static/image/logo.png';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <CustomAppBar position="static">
         <Container maxWidth="lg">
           <Toolbar sx={{ justifyContent: 'space-between' }}>

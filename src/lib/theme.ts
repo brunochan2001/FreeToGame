@@ -8,12 +8,12 @@ const options: ThemeOptions = {
   palette: {
     mode: 'dark',
     primary: {
-      main: '#7A8288',
+      dark: '#424242',
+      main: '#4799eb',
       contrastText: '#fff'
     }
   },
   typography: {
-    fontFamily: 'Poppins',
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,

@@ -1,5 +1,8 @@
 import { AppBar, styled } from '@mui/material';
 
-export const CustomAppBar = styled(AppBar)(() => ({
-  boxShadow: '0 1px 5px  #D9D9D9'
+export const CustomAppBar = styled(AppBar)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.dark,
+  img: {
+    height: '45px'
+  }
 }));

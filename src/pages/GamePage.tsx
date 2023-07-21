@@ -1,10 +1,11 @@
 import React from 'react';
 import { DefaultLayout } from '../layout';
+import { GamesContent } from '../container';
 
 const GamePage = () => {
   return (
     <DefaultLayout>
-      <div>GamePage</div>
+      <GamesContent />
     </DefaultLayout>
   );
 };

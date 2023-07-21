@@ -1,0 +1,95 @@
+.select__container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.select__container label {
+  color: #7a8288;
+}
+
+.select {
+  min-height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.select__label {
+  display: block;
+  height: 40px;
+  justify-self: flex-end;
+  background: none;
+  border: 0;
+  width: 100%;
+  text-align: left;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.select__label::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #ccc transparent transparent transparent;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul.select__options {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 100%;
+  background-color: #1a1919;
+  max-height: 144px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+ul.select__options > li:hover {
+  background-color: #121212;
+}
+
+ul.select__options > li > button {
+  color: #fff;
+  background: transparent;
+  width: 100%;
+  border: 0;
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .select__container {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
+  .select__label,
+  label {
+    flex: 1;
+    font-size: 0.7rem;
+  }
+  .select__label {
+    padding: 0 5px;
+  }
+}
