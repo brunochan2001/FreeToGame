@@ -11,7 +11,7 @@ interface Props {
 const GamesList: React.FC<Props> = ({ games }) => {
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
-  const gamesPerPage = 24;
+  const gamesPerPage = 12;
   const gamesList = useMemo(
     () => games.slice((page - 1) * gamesPerPage, page * gamesPerPage),
     [games, page]

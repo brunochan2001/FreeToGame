@@ -34,7 +34,7 @@ const FiltersGame: React.FC<Props> = ({ setGames }) => {
     () => {
       searchGamesWithName(name);
     },
-    300,
+    400,
     [name]
   );
 
@@ -48,7 +48,6 @@ const FiltersGame: React.FC<Props> = ({ setGames }) => {
 
   const handleInputName = (value: string) => {
     setName(value);
-    // searchGamesWithName(value);
   };
 
   const getGamesWithGenderPlataform = () => {
