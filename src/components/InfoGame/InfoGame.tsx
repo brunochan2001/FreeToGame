@@ -1,12 +1,20 @@
 import React from 'react';
 import { ActiveGame, Screenshots } from '../../lib/types';
-import { Divider, Grid, ImageListItem, Typography } from '@mui/material';
+import {
+  Divider,
+  Grid,
+  ImageListItem,
+  Typography,
+  Button
+} from '@mui/material';
+import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 
 interface Props {
   activeGame: ActiveGame;
+  onClick: () => void;
 }
 
-const InfoGame: React.FC<Props> = ({ activeGame }) => {
+const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
   const {
     description,
     developer,
@@ -24,19 +32,33 @@ const InfoGame: React.FC<Props> = ({ activeGame }) => {
   return (
     <Grid container spacing={4}>
       <Grid item>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <ImageListItem>
-              <img
-                src={`https://www.freetogame.com/g/${id}/background.jpg`}
-                alt={title}
-              />
-            </ImageListItem>
+        <Button
+          size="small"
+          variant="outlined"
+          onClick={onClick}
+          startIcon={<KeyboardReturnIcon />}
+        >
+          return
+        </Button>
+      </Grid>
+      <Grid item style={{ width: '100%' }}>
+        <div>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <ImageListItem>
+                <img
+                  src={`https://www.freetogame.com/g/${id}/background.jpg`}
+                  alt={title}
+                />
+              </ImageListItem>
+            </Grid>
           </Grid>
-        </Grid>
+        </div>
       </Grid>
       <Grid item>
-        <Typography variant="h2">{title}</Typography>
+        <div>
+          <Typography variant="h2">{title}</Typography>
+        </div>
       </Grid>
       <Grid item>
         <Typography variant="h4">Abouts</Typography>
