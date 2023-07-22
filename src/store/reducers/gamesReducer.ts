@@ -5,7 +5,8 @@ import { GamesState } from '../../lib/types';
 const initialState: GamesState = {
   loading: false,
   error: false,
-  data: []
+  data: [],
+  activeGame: {}
 };
 
 const reducer = (state = initialState, action: AnyAction) => {
@@ -13,7 +14,8 @@ const reducer = (state = initialState, action: AnyAction) => {
     case types.GET_GAMES_LOADING: {
       return {
         ...state,
-        loading: true
+        loading: true,
+        activeGame: {}
       };
     }
     case types.GET_GAMES_SUCCESS: {
@@ -30,6 +32,26 @@ const reducer = (state = initialState, action: AnyAction) => {
         loading: false,
         error: action.payload,
         data: []
+      };
+    }
+    case types.GET_SINGLE_GAME_LOADING: {
+      return {
+        ...state,
+        loading: true
+      };
+    }
+    case types.GET_SINGLE_GAME_SUCCESS: {
+      return {
+        ...state,
+        activeGame: action.payload
+      };
+    }
+    case types.GET_SINGLE_GAME_FAIL: {
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+        activeGame: {}
       };
     }
     default: {

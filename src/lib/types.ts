@@ -16,9 +16,29 @@ export interface GamesState {
   loading: boolean;
   error: false | unknown;
   data: Game[];
+  activeGame: ActiveGame | any;
 }
 
 export interface options {
   label: string;
   value: string;
+}
+
+export interface Screenshots {
+  id: number;
+  image: string;
+}
+export interface MinimumSystemRequirements {
+  os: number;
+  processor: string;
+  memory: string;
+  graphics: string;
+  storage: string;
+}
+
+export interface ActiveGame extends Game {
+  status: string;
+  description: string;
+  minimum_system_requirements: MinimumSystemRequirements;
+  screenshots: Screenshots[];
 }

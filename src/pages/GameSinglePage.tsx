@@ -1,10 +1,11 @@
 import React from 'react';
 import { DefaultLayout } from '../layout';
+import { SingleGame } from '../container';
 
-const GameSinglePage = () => {
+const GameSinglePage: React.FC = () => {
   return (
     <DefaultLayout>
-      <div>GameSinglePage</div>
+      <SingleGame />
     </DefaultLayout>
   );
 };
