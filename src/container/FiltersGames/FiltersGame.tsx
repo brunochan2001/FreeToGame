@@ -6,6 +6,7 @@ import { AppThunkDispatch, RootState } from '../../store/storeConfig';
 import { SearchBar, CustomSelect } from '../../components';
 import { Game } from '../../lib/types';
 import { categoryOptions, platformOptions } from '../../lib/options';
+import { useDebounce } from 'react-use';
 
 interface Form {
   category: string;
@@ -29,6 +30,14 @@ const FiltersGame: React.FC<Props> = ({ setGames }) => {
     getGamesWithGenderPlataform();
   }, [form]);
 
+  useDebounce(
+    () => {
+      searchGamesWithName(name);
+    },
+    300,
+    [name]
+  );
+
   const handleGender = (option: any) => {
     setForm({ ...form, category: option.value });
   };
@@ -39,7 +48,7 @@ const FiltersGame: React.FC<Props> = ({ setGames }) => {
 
   const handleInputName = (value: string) => {
     setName(value);
-    searchGamesWithName(value);
+    // searchGamesWithName(value);
   };
 
   const getGamesWithGenderPlataform = () => {
