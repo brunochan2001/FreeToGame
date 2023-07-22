@@ -9,7 +9,7 @@ import { InfoGame } from '../../components';
 const SingleGame: React.FC = () => {
   const dispatch = useDispatch<AppThunkDispatch>();
   const navigate = useNavigate();
-  const { activeGame } = useSelector((state: RootState) => state);
+  const { activeGame } = useSelector((state: RootState) => state.games);
   const { id } = useParams();
 
   useEffect(() => {

@@ -61,7 +61,7 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
         </div>
       </Grid>
       <Grid item>
-        <Typography variant="h4">Abouts</Typography>
+        <Typography variant="h4">About</Typography>
         <Divider light sx={{ marginBottom: '.5rem' }} />
         <Typography variant="caption">{description}</Typography>
       </Grid>

@@ -7,7 +7,7 @@ import { Game } from '../../lib/types';
 import { Box, CircularProgress } from '@mui/material';
 
 const GamesContent: React.FC = () => {
-  const { loading, data } = useSelector((state: RootState) => state);
+  const { data, loading } = useSelector((state: RootState) => state.games);
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {

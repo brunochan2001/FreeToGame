@@ -18,10 +18,10 @@ const CustomSelect: React.FC<Props> = ({ label, options, value, onChange }) => {
   return (
     <div className="select__container">
       <label>{label}</label>
-      <div className="select">
+      <div className="select" onMouseLeave={() => setShowDropdown(false)}>
         <button
           className="select__label"
-          onClick={() => setShowDropdown(!showDropDown)}
+          onMouseEnter={() => setShowDropdown(true)}
         >
           {value || `all ${label}`}
         </button>

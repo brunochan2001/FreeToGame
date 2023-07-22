@@ -18,7 +18,7 @@ interface Props {
 
 const FiltersGame: React.FC<Props> = ({ setGames }) => {
   const dispatch = useDispatch<AppThunkDispatch>();
-  const { data } = useSelector((state: RootState) => state);
+  const { data } = useSelector((state: RootState) => state.games);
   const [name, setName] = useState<string>('');
   const [form, setForm] = useState<Form>({
     category: '',
