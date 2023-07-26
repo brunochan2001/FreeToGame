@@ -57,13 +57,17 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
       </Grid>
       <Grid item>
         <div>
-          <Typography variant="h2">{title}</Typography>
+          <Typography variant="h2" data-testid="title">
+            {title}
+          </Typography>
         </div>
       </Grid>
       <Grid item>
         <Typography variant="h4">About</Typography>
         <Divider light sx={{ marginBottom: '.5rem' }} />
-        <Typography variant="caption">{description}</Typography>
+        <Typography variant="caption" data-testid="description">
+          {description}
+        </Typography>
       </Grid>
       <Grid item style={{ width: '100%' }}>
         <Typography variant="h4">Additional Information</Typography>
@@ -75,7 +79,9 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                 <Typography variant="subtitle1">Title</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="caption">{title}</Typography>
+                <Typography variant="caption" data-testid="additional-title">
+                  {title}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -85,7 +91,12 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                 <Typography variant="h6">Developer</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="caption">{developer}</Typography>
+                <Typography
+                  variant="caption"
+                  data-testid="additional-developer"
+                >
+                  {developer}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -95,7 +106,12 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                 <Typography variant="h6">Publisher</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="caption">{publisher}</Typography>
+                <Typography
+                  variant="caption"
+                  data-testid="additional-publisher"
+                >
+                  {publisher}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -105,7 +121,12 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                 <Typography variant="h6">Release Date</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="caption">{release_date}</Typography>
+                <Typography
+                  variant="caption"
+                  data-testid="additional-releaseDate"
+                >
+                  {release_date}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -115,7 +136,9 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                 <Typography variant="h6">Genre</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="caption">{genre}</Typography>
+                <Typography variant="caption" data-testid="additional-genre">
+                  {genre}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -125,7 +148,9 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                 <Typography variant="h6">Platform</Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="caption">{platform}</Typography>
+                <Typography variant="caption" data-testid="additional-platform">
+                  {platform}
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -155,7 +180,10 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                   <Typography variant="h6">Graphics</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography variant="caption">
+                  <Typography
+                    variant="caption"
+                    data-testid="requirements-graphics"
+                  >
                     {minimum_system_requirements['graphics']}
                   </Typography>
                 </Grid>
@@ -167,7 +195,10 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                   <Typography variant="h6">Memory</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography variant="caption">
+                  <Typography
+                    variant="caption"
+                    data-testid="requirements-memory"
+                  >
                     {minimum_system_requirements['memory']}
                   </Typography>
                 </Grid>
@@ -179,7 +210,7 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                   <Typography variant="h6">Os</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography variant="caption">
+                  <Typography variant="caption" data-testid="requirements-os">
                     {minimum_system_requirements['os']}
                   </Typography>
                 </Grid>
@@ -191,7 +222,10 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                   <Typography variant="h6">Processor</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography variant="caption">
+                  <Typography
+                    variant="caption"
+                    data-testid="requirements-processor"
+                  >
                     {minimum_system_requirements['processor']}
                   </Typography>
                 </Grid>
@@ -203,7 +237,10 @@ const InfoGame: React.FC<Props> = ({ activeGame, onClick }) => {
                   <Typography variant="h6">Storage</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography variant="caption">
+                  <Typography
+                    variant="caption"
+                    data-testid="requirements-storage"
+                  >
                     {minimum_system_requirements['storage']}
                   </Typography>
                 </Grid>

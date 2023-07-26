@@ -22,11 +22,12 @@ const CustomSelect: React.FC<Props> = ({ label, options, value, onChange }) => {
         <button
           className="select__label"
           onMouseEnter={() => setShowDropdown(true)}
+          data-testid="show-list"
         >
           {value || `all ${label}`}
         </button>
         {showDropDown && (
-          <ul className="select__options">
+          <ul className="select__options" data-testid="list-options">
             {options.map((option, index) => (
               <li key={index} onClick={onClickOption}>
                 <button onClick={() => onChange(option)}>{option.label}</button>

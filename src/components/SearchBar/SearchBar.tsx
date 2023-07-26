@@ -15,6 +15,7 @@ const SearchBar: React.FC<Props> = ({ value, onChange }) => {
         className="search-input"
         placeholder="Searching games"
         value={value}
+        data-testid="search"
         onChange={e => onChange(e.target.value)}
       />
     </div>

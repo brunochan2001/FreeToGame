@@ -29,7 +29,7 @@ export interface Screenshots {
   image: string;
 }
 export interface MinimumSystemRequirements {
-  os: number;
+  os: string;
   processor: string;
   memory: string;
   graphics: string;
