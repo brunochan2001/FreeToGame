@@ -28,12 +28,14 @@ Initial commits have a "task Id" before a descriptive message to make it easier 
 - For the main tech I felt that CRA was a safe bet to quickly set up the repo.
 - I used typescript for its flexibility, and it's advantages over just prop-types or flow.
 - For layout, use material-ui because it has ready to use components and a quick and easy way to create a theme
-- Using redux was not a requirement, but it to have global state and get the fame in any component
-- For tests I just used jest.
+- Using redux was not a requirement, but it to have global state and get the Game in any component
+- Install the library react-use, to use hook useDebounce that allows control the execution of my function after a certain time to make the request of the users improving performance avoiding unnecessary calls to the Api.
+- For tests I just used jest
+
 
 ### Additional thoughts
 
-- All the requirements have been fulfilled.
+- All the requirements have been fulfilled
 
 ## How to run locally
 
